@@ -1,5 +1,5 @@
 {
-  "name": "egg-mysql",
+  "name": "egg-abc-mysql",
   "version": "3.0.0",
   "description": "MySQL plugin for egg",
   "eggPlugin": {
@@ -13,7 +13,7 @@
     "database"
   ],
   "dependencies": {
-    "ali-rds": "^3.0.0"
+    "abc-mysql": "^3.0.0"
   },
   "devDependencies": {
     "autod": "^2.8.0",
@@ -44,12 +44,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-mysql.git"
+    "url": "git+https://github.com/Degfy/egg-mysql.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/Degfy/egg/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-mysql#readme",
-  "author": "jtyjty99999",
+  "homepage": "https://github.com/Degfy/egg-mysql#readme",
+  "author": [
+    "degfy",
+    "jtyjty99999"
+  ],
   "license": "MIT"
 }

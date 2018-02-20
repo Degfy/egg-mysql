@@ -55,7 +55,9 @@ describe('test/mysql.test.js', () => {
     assert(users.length === 2);
 
     const rows = yield app.mysql.select('npm_auth', {
-      orders: [[ 'id', 'desc' ]],
+      orders: [
+        [ 'id', 'desc' ],
+      ],
       limit: 2,
     });
     assert(rows.length === 2);
@@ -108,13 +110,14 @@ describe('test/mysql.test.js', () => {
   });
 
   it('should queryOne work on transaction', function* () {
-    const result = yield app.mysql.beginTransactionScope(function* (conn) {
-      const row = yield conn.queryOne('select * from npm_auth order by id desc limit 10');
+    const result = yield app.mysql.beginTransactionScope(async conn => {
+      const row = await conn.queryOne('select * from npm_auth order by id desc limit 10');
       return { row };
     }, {});
     assert(result.row);
     assert(result.row.user_id && typeof result.row.user_id === 'string');
     assert(result.row.password === '3');
+
   });
 
   describe('config.mysql.agent = true', () => {
